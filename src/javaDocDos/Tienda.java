@@ -1,17 +1,25 @@
 package javaDocDos;
 
-/*
+/**
  * Calcula precios de una tienda online.
+ * 
  */
 public class Tienda {
  
     /** IVA general en España, en tanto por uno. */
     public static final double IVA = 0.21;
+    
+    
+    /**Constructor de la clase Tienda
+     * */
+    public Tienda() {
+    }
  
     /**
      * Calcula el precio de un producto con el IVA incluido.
      *
-     * @param precio el precio sin IVA, en euros
+     * @param precio el precio sin IVA, en euros.
+     * @return precio con IVA incluido.
      */
     public static double precioConIva(double precio) {
         return precio + precio * IVA;
@@ -21,7 +29,7 @@ public class Tienda {
      * Aplica un descuento a un precio.
      *
      * @param precio el precio original, en euros
-     * @param porcentaje el descuento
+     * @param descuento porcentaje de descuetno
      * @return el precio con el descuento aplicado, en euros
      */
     public static double aplicarDescuento(double precio, int descuento) {
@@ -29,7 +37,7 @@ public class Tienda {
     }
  
     /**
-     * Devuelve precio >= 50.
+     * Verifica si la compra tiene evio gratis o no.
      *
      * @param precio el importe del pedido, en euros
      * @return precio >= 50
@@ -39,11 +47,10 @@ public class Tienda {
     }
  
     /**
-     * Muestra por pantalla una línea del ticket de compra.
+     * Muestra por pantalla el ticket de compra.
      *
-     * @param producto el nombre del producto
-     * @param precio el precio sin IVA, en euros
-     * @return la línea del ticket
+     * @param producto el nombre del producto.
+     * @param precio el precio sin IVA, en euros.
      */
     public static void mostrarTicket(String producto, double precio) {
         System.out.println(producto + ": " + precioConIva(precio) + " euros");
@@ -52,9 +59,9 @@ public class Tienda {
     /**
      * Calcula cuántas unidades se pueden comprar con un presupuesto.
      *
-     * @param precio el precio de una unidad, en euros
-     * @param presupuesto
-     * @return
+     * @param precio el precio de una unidad, en euros.
+     * @param presupuesto cantidad disponible para comprar.
+     * @return el numero maximo que se puede comprar.
      */
     public static int unidadesPosibles(double precio, double presupuesto) {
         return (int) (presupuesto / precio);
